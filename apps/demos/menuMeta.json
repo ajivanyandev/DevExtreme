@@ -5765,212 +5765,172 @@
         "Name": "Vector Map",
         "Breadcrumb": true,
         "Equivalents": "VectorMap, dxVectorMap, dx-vector-map",
-        "Groups": [
+        "Demos": [
           {
-            "Name": "Data Binding",
-            "Breadcrumb": true,
-            "Equivalents": "",
-            "Demos": [
-              {
-                "Title": "Custom Map Data",
-                "Name": "CustomMapData",
-                "DocUrl": "Guide/UI_Components/VectorMap/Providing_Data/#Data_for_Areas",
-                "Credits": "www.wikipedia.org",
-                "Widget": "VectorMap",
-                "Modules": "vectormap",
-                "MvcAdditionalFiles": [
-                  "/Scripts/data/customMapData.js",
-                  "/Models/SampleData/PangaeaBorders.cs",
-                  "/Models/SampleData/PangaeaContinents.cs"
-                ],
-                "DemoType": "Viz"
-              },
-              {
-                "Title": "Floor Plan",
-                "Name": "FloorPlan",
-                "DocUrl": "ApiReference/UI_Components/dxVectorMap/Configuration/#projection",
-                "Widget": "VectorMap",
-                "Modules": "vectormap",
-                "MvcAdditionalFiles": [
-                  "/Scripts/data/floorPlanProjection.js",
-                  "/Models/SampleData/BuildingData.cs",
-                  "/Models/SampleData/RoomData.cs"
-                ],
-                "DemoType": "Viz"
-              }
-            ]
+            "Title": "Zooming and Centering",
+            "Name": "ZoomingAndCentering",
+            "DocUrl": "Guide/UI_Components/VectorMap/End-User_Interaction/#Zooming",
+            "Widget": "VectorMap",
+            "Modules": "vectormap",
+            "MvcAdditionalFiles": [
+              "/Models/VectorMapMarker.cs",
+              "/Models/MarkerAttribute.cs",
+              "/Models/SampleData/VectorMapMarkerData.cs"
+            ],
+            "DemoType": "Viz"
           },
           {
-            "Name": "Multiple Layers",
-            "Equivalents": "",
-            "Demos": [
-              {
-                "Title": "Multiple Layers",
-                "Name": "MultipleLayers",
-                "DocUrl": "ApiReference/UI_Components/dxVectorMap/Configuration/layers/",
-                "Widget": "VectorMap",
-                "Modules": "vectormap",
-                "MvcAdditionalFiles": [
-                  "/Models/SampleData/StreamsData.cs"
-                ],
-                "DemoType": "Viz"
-              }
-            ]
+            "Title": "Colors Customization",
+            "Name": "ColorsCustomization",
+            "DocUrl": "Guide/UI_Components/VectorMap/Visual_Elements/#Areas",
+            "Widget": "VectorMap",
+            "Modules": "vectormap",
+            "MvcAdditionalFiles": [
+              "/Scripts/data/countries.js"
+            ],
+            "DemoType": "Viz"
           },
           {
-            "Name": "Markers",
-            "Breadcrumb": true,
-            "Equivalents": "",
-            "Demos": [
-              {
-                "Title": "Image Markers",
-                "Name": "ImageMarkers",
-                "DocUrl": "Guide/UI_Components/VectorMap/Visual_Elements/#Markers",
-                "Widget": "VectorMap",
-                "Modules": "vectormap",
-                "MvcAdditionalFiles": [
-                  "/Models/SampleData/WeatherData.cs"
-                ],
-                "DemoType": "Viz"
-              },
-              {
-                "Title": "Bubble Markers",
-                "Name": "BubbleMarkers",
-                "DocUrl": "Guide/UI_Components/VectorMap/Visual_Elements/#Markers",
-                "Widget": "VectorMap",
-                "Modules": "vectormap",
-                "MvcAdditionalFiles": [
-                  "/Models/SampleData/BubbleMarkers.cs"
-                ],
-                "DemoType": "Viz"
-              },
-              {
-                "Title": "Pie Markers",
-                "Name": "PieMarkers",
-                "DocUrl": "Guide/UI_Components/VectorMap/Visual_Elements/#Markers",
-                "Widget": "VectorMap",
-                "Modules": "vectormap",
-                "MvcAdditionalFiles": [
-                  "/Scripts/data/names.js",
-                  "/Models/SampleData/PieMarkersData.cs"
-                ],
-                "DemoType": "Viz"
-              }
-            ]
+            "Title": "Palette",
+            "Name": "Palette",
+            "DocUrl": "ApiReference/UI_Components/dxVectorMap/Configuration/layers/#palette",
+            "Widget": "VectorMap",
+            "Modules": "vectormap",
+            "MvcAdditionalFiles": [
+              "/Scripts/data/populations.js"
+            ],
+            "DemoType": "Viz"
           },
           {
-            "Name": "Legend",
-            "Equivalents": "",
-            "Demos": [
-              {
-                "Title": "Legend",
-                "Name": "AreaWithLabelsAndTwoLegends",
-                "DocUrl": "Guide/UI_Components/VectorMap/Visual_Elements/#Legend",
-                "Widget": "VectorMap",
-                "Modules": "vectormap",
-                "MvcAdditionalFiles": [
-                  "/Models/SampleData/AreaLabelsData.cs",
-                  "/Scripts/data/areaPopulations.js"
-                ],
-                "DemoType": "Viz"
-              }
-            ]
+            "Title": "Image Markers",
+            "Name": "ImageMarkers",
+            "DocUrl": "Guide/UI_Components/VectorMap/Visual_Elements/#Markers",
+            "Widget": "VectorMap",
+            "Modules": "vectormap",
+            "MvcAdditionalFiles": [
+              "/Models/SampleData/WeatherData.cs"
+            ],
+            "DemoType": "Viz"
           },
           {
-            "Name": "Zooming and Panning",
-            "Breadcrumb": true,
-            "Equivalents": "",
-            "Demos": [
-              {
-                "Title": "Zooming and Centering",
-                "Name": "ZoomingAndCentering",
-                "DocUrl": "Guide/UI_Components/VectorMap/End-User_Interaction/#Zooming",
-                "Widget": "VectorMap",
-                "Modules": "vectormap",
-                "MvcAdditionalFiles": [
-                  "/Models/VectorMapMarker.cs",
-                  "/Models/MarkerAttribute.cs",
-                  "/Models/SampleData/VectorMapMarkerData.cs"
-                ],
-                "DemoType": "Viz"
-              },
-              {
-                "Title": "Dynamic Viewport",
-                "Name": "DynamicViewport",
-                "Widget": "VectorMap",
-                "Modules": "vectormap",
-                "MvcAdditionalFiles": [
-                  "/Models/SampleData/ViewportCoordinateData.cs",
-                  "/Models/ViewportCoordinate.cs"
-                ],
-                "DemoType": "Viz"
-              }
-            ]
+            "Title": "Bubble Markers",
+            "Name": "BubbleMarkers",
+            "DocUrl": "Guide/UI_Components/VectorMap/Visual_Elements/#Markers",
+            "Widget": "VectorMap",
+            "Modules": "vectormap",
+            "MvcAdditionalFiles": [
+              "/Models/SampleData/BubbleMarkers.cs"
+            ],
+            "DemoType": "Viz"
           },
           {
-            "Name": "Customization",
-            "Breadcrumb": true,
-            "Equivalents": "",
-            "Demos": [
-              {
-                "Title": "Colors Customization",
-                "Name": "ColorsCustomization",
-                "DocUrl": "Guide/UI_Components/VectorMap/Visual_Elements/#Areas",
-                "Widget": "VectorMap",
-                "Modules": "vectormap",
-                "MvcAdditionalFiles": [
-                  "/Scripts/data/countries.js"
-                ],
-                "DemoType": "Viz"
-              },
-              {
-                "Title": "Palette",
-                "Name": "Palette",
-                "DocUrl": "ApiReference/UI_Components/dxVectorMap/Configuration/layers/#palette",
-                "Widget": "VectorMap",
-                "Modules": "vectormap",
-                "MvcAdditionalFiles": [
-                  "/Scripts/data/populations.js"
-                ],
-                "DemoType": "Viz"
-              },
-              {
-                "Title": "Tooltips Customization",
-                "Name": "TooltipsCustomization",
-                "Credits": "www.wikipedia.org",
-                "Widget": "VectorMap",
-                "Modules": "vectormap",
-                "MvcAdditionalFiles": [
-                  "/Scripts/data/countriesGDP.js"
-                ],
-                "DemoType": "Viz"
-              },
-              {
-                "Title": "Custom Projection",
-                "Name": "CustomProjection",
-                "Credits": "www.wikipedia.org",
-                "Widget": "VectorMap",
-                "Modules": "vectormap",
-                "MvcAdditionalFiles": [
-                  "/Scripts/data/customProjection.js",
-                  "/Models/CoordLines.cs",
-                  "/Models/SampleData/CoordLinesData.cs"
-                ],
-                "DemoType": "Viz"
-              },
-              {
-                "Title": "Custom Annotations",
-                "Name": "CustomAnnotations",
-                "DocUrl": "ApiReference/UI_Components/dxVectorMap/Configuration/annotations",
-                "Widget": "VectorMap",
-                "Modules": "vectormap",
-                "MvcAdditionalFiles": [
-                  "/Models/StateData.cs",
-                  "/Models/SampleData/StatesData.cs"
-                ],
-                "DemoType": "Viz"
-              }
-            ]
+            "Title": "Pie Markers",
+            "Name": "PieMarkers",
+            "DocUrl": "Guide/UI_Components/VectorMap/Visual_Elements/#Markers",
+            "Widget": "VectorMap",
+            "Modules": "vectormap",
+            "MvcAdditionalFiles": [
+              "/Scripts/data/names.js",
+              "/Models/SampleData/PieMarkersData.cs"
+            ],
+            "DemoType": "Viz"
+          },
+          {
+            "Title": "Legend",
+            "Name": "AreaWithLabelsAndTwoLegends",
+            "DocUrl": "Guide/UI_Components/VectorMap/Visual_Elements/#Legend",
+            "Widget": "VectorMap",
+            "Modules": "vectormap",
+            "MvcAdditionalFiles": [
+              "/Models/SampleData/AreaLabelsData.cs",
+              "/Scripts/data/areaPopulations.js"
+            ],
+            "DemoType": "Viz"
+          },
+          {
+            "Title": "Tooltips Customization",
+            "Name": "TooltipsCustomization",
+            "Credits": "www.wikipedia.org",
+            "Widget": "VectorMap",
+            "Modules": "vectormap",
+            "MvcAdditionalFiles": [
+              "/Scripts/data/countriesGDP.js"
+            ],
+            "DemoType": "Viz"
+          },
+          {
+            "Title": "Custom Annotations",
+            "Name": "CustomAnnotations",
+            "DocUrl": "ApiReference/UI_Components/dxVectorMap/Configuration/annotations",
+            "Widget": "VectorMap",
+            "Modules": "vectormap",
+            "MvcAdditionalFiles": [
+              "/Models/StateData.cs",
+              "/Models/SampleData/StatesData.cs"
+            ],
+            "DemoType": "Viz"
+          },
+          {
+            "Title": "Custom Map Data",
+            "Name": "CustomMapData",
+            "DocUrl": "Guide/UI_Components/VectorMap/Providing_Data/#Data_for_Areas",
+            "Credits": "www.wikipedia.org",
+            "Widget": "VectorMap",
+            "Modules": "vectormap",
+            "MvcAdditionalFiles": [
+              "/Scripts/data/customMapData.js",
+              "/Models/SampleData/PangaeaBorders.cs",
+              "/Models/SampleData/PangaeaContinents.cs"
+            ],
+            "DemoType": "Viz"
+          },
+          {
+            "Title": "Floor Plan",
+            "Name": "FloorPlan",
+            "DocUrl": "ApiReference/UI_Components/dxVectorMap/Configuration/#projection",
+            "Widget": "VectorMap",
+            "Modules": "vectormap",
+            "MvcAdditionalFiles": [
+              "/Scripts/data/floorPlanProjection.js",
+              "/Models/SampleData/BuildingData.cs",
+              "/Models/SampleData/RoomData.cs"
+            ],
+            "DemoType": "Viz"
+          },
+          {
+            "Title": "Dynamic Viewport",
+            "Name": "DynamicViewport",
+            "Widget": "VectorMap",
+            "Modules": "vectormap",
+            "MvcAdditionalFiles": [
+              "/Models/SampleData/ViewportCoordinateData.cs",
+              "/Models/ViewportCoordinate.cs"
+            ],
+            "DemoType": "Viz"
+          },
+          {
+            "Title": "Custom Projection",
+            "Name": "CustomProjection",
+            "Credits": "www.wikipedia.org",
+            "Widget": "VectorMap",
+            "Modules": "vectormap",
+            "MvcAdditionalFiles": [
+              "/Scripts/data/customProjection.js",
+              "/Models/CoordLines.cs",
+              "/Models/SampleData/CoordLinesData.cs"
+            ],
+            "DemoType": "Viz"
+          },
+          {
+            "Title": "Multiple Layers",
+            "Name": "MultipleLayers",
+            "DocUrl": "ApiReference/UI_Components/dxVectorMap/Configuration/layers/",
+            "Widget": "VectorMap",
+            "Modules": "vectormap",
+            "MvcAdditionalFiles": [
+              "/Models/SampleData/StreamsData.cs"
+            ],
+            "DemoType": "Viz"
           }
         ]
       }
