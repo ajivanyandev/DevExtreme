@@ -2,9 +2,11 @@
   "extends": "@vue/tsconfig/tsconfig.dom.json",
   "compilerOptions": {
     "lib": ["es2022", "DOM", "DOM.Iterable"],
-    "strict": false
+    "strict": true
   },
   "include": [
-    "Demos/**/Vue/**/*.vue"
+    "Demos/Scheduler/**/Vue/**/*.vue",
+    "Demos/PivotGrid/**/Vue/**/*.vue",
+    "Demos/Pagination/**/Vue/**/*.vue",
   ]
 }
