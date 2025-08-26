@@ -18,6 +18,7 @@
   </DxVectorMap>
 </template>
 <script setup lang="ts">
+// @ts-ignore
 import * as mapsData from 'devextreme-dist/js/vectormap-data/world.js';
 import {
   DxVectorMap,
@@ -25,13 +26,14 @@ import {
   DxTooltip,
   DxBorder,
   DxFont,
+  type DxVectorMapTypes,
 } from 'devextreme-vue/vector-map';
 import { countries } from './data.ts';
 
 const worldData = mapsData.world;
 const bounds = [-180, 85, 180, -60];
 
-function customizeTooltip(info) {
+function customizeTooltip(info: any) {
   const name = info.attribute('name');
   const country = countries[name];
   if (country) {
@@ -42,12 +44,12 @@ function customizeTooltip(info) {
   }
   return null;
 }
-function click({ target }) {
+function click({ target }: DxVectorMapTypes.ClickEvent) {
   if (target && countries[target.attribute('name')]) {
     target.selected(!target.selected());
   }
 }
-function customizeLayer(elements) {
+function customizeLayer(elements: any[]) {
   elements.forEach((element) => {
     const country = countries[element.attribute('name')];
     if (country) {

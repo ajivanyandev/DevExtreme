@@ -104,6 +104,7 @@
 </template>
 <script setup lang="ts">
 import { ref } from 'vue';
+import type { chartPointAggregationInfoObject as ChartPointAggregationInfoObject } from 'devextreme/viz/chart';
 import DxChart, {
   DxCommonSeriesSettings,
   DxSeries,
@@ -122,16 +123,17 @@ import DxCheckBox from 'devextreme-vue/check-box';
 import DxSelectBox from 'devextreme-vue/select-box';
 import { weatherData, aggregationFunctions, aggregationIntervals } from './data.ts';
 
+
 const useAggregation = ref(true);
 const currentFunction = ref<DxChartTypes.ChartSeriesAggregationMethod>(aggregationFunctions[0].func);
 const currentInterval = ref(aggregationIntervals[0].interval);
 
-function calculateRangeArea({ data, intervalStart, intervalEnd }) {
-  if (!data.length) {
+function calculateRangeArea({ data, intervalStart, intervalEnd }: ChartPointAggregationInfoObject) {
+  if (!data?.length) {
     return null;
   }
 
-  const temp = data.map((item) => item.temp);
+  const temp = data.map((item: Record<string, any>) => item.temp);
 
   return {
     date: new Date((intervalStart.valueOf()
@@ -140,21 +142,22 @@ function calculateRangeArea({ data, intervalStart, intervalEnd }) {
     minTemp: Math.min.apply(null, temp),
   };
 }
-function customizeTooltip(pointInfo) {
+
+function customizeTooltip(pointInfo: any) {
   const { aggregationInfo } = pointInfo.point;
   const start = aggregationInfo && aggregationInfo.intervalStart;
   const end = aggregationInfo && aggregationInfo.intervalEnd;
-  const handlers = {
-    'Average temperature': ({ argument, value }) => ({
+  const handlers: Record<string, any> = {
+    'Average temperature': ({ argument, value }: { argument: Date; value: number }) => ({
       text: `${(!aggregationInfo
         ? `Date: ${argument.toDateString()}`
         : `Interval: ${start.toDateString()} - ${end.toDateString()}`)
       }<br/>Temperature: ${value.toFixed(2)} °C`,
     }),
-    'Temperature range': ({ rangeValue1, rangeValue2 }) => ({
+    'Temperature range': ({ rangeValue1, rangeValue2 }: { rangeValue1: number; rangeValue2: number }) => ({
       text: `Interval: ${start.toDateString()} - ${end.toDateString()}<br/>Temperature range: ${rangeValue1} - ${rangeValue2} °C`,
     }),
-    Precipitation: ({ argument, valueText }) => ({
+    Precipitation: ({ argument, valueText }: { argument: Date; valueText: string }) => ({
       text: `Date: ${argument.toDateString()}<br/>Precipitation: ${valueText} mm`,
     }),
   };
