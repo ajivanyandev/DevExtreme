@@ -26,7 +26,8 @@
 <script setup lang="ts">
 import DxPivotGrid, {
   DxFieldChooser,
-  DxFieldPanel,
+  DxFieldPanel, 
+  type DxPivotGridTypes,
 } from 'devextreme-vue/pivot-grid';
 import PivotGridDataSource from 'devextreme/ui/pivot_grid/data_source';
 import sales from './data.ts';
@@ -71,12 +72,12 @@ const dataSource = new PivotGridDataSource({
   store: sales,
 });
 
-function onContextMenuPreparing(e: Record<string, any>) {
-  if (e.field && e.field.dataField === 'amount') {
+function onContextMenuPreparing(e: DxPivotGridTypes.ContextMenuPreparingEvent) {
+  if (e.field?.dataField === 'amount') {
     summaryDisplayModes.forEach((mode) => {
-      e.items.push({
+      e.items?.push({
         text: mode.text,
-        selected: e.field.summaryDisplayMode === mode.value,
+        selected: e.field?.summaryDisplayMode === mode.value,
         onItemClick: () => {
           let format: string | undefined;
           const caption = mode.value === 'none' ? 'Total Sales' : 'Relative Sales';
@@ -84,7 +85,7 @@ function onContextMenuPreparing(e: Record<string, any>) {
                   || mode.value === 'absoluteVariation') {
             format = 'currency';
           }
-          dataSource.field(e.field.index, {
+          dataSource.field((e.field as Record<string, any>).index, {
             summaryDisplayMode: mode.value,
             format,
             caption,

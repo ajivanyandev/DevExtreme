@@ -1,3 +1,10 @@
+interface Appointment {
+  text: string,
+  startDate: Date,
+  endDate: Date,
+  humanId: number
+}
+
 export const resources = [{
   id: 0,
   text: 'David Carter',
@@ -190,7 +197,7 @@ function getRandomText(textIndex: number) {
   return appointmentsText[textIndex % appointmentsText.length];
 }
 
-function filterAppointmentsByTime(appointments: any[], startDayHour: number, endDayHour: number) {
+function filterAppointmentsByTime(appointments: Appointment[], startDayHour: number, endDayHour: number) {
   const result = [];
 
   for (let i = 0; i < appointments.length; i += 1) {
@@ -208,7 +215,7 @@ function filterAppointmentsByTime(appointments: any[], startDayHour: number, end
 }
 
 export function generateAppointments(startDay: Date, endDay: Date, startDayHour: number, endDayHour: number) {
-  const appointments = [];
+  const appointments: Appointment[] = [];
 
   let textIndex = 0;
   let durationState = 1;

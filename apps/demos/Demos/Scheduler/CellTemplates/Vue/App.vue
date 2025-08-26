@@ -123,8 +123,8 @@ function applyDisableDatesToDateEditors(form: DxForm['instance']) {
   endDateEditor?.option('disabledDates', holidays);
 }
 
-function setComponentAria(element: any) {
-  const prevAria = element?.attr('aria-label') || '';
-  element?.attr('aria-label', `${prevAria} ${ariaDescription.value}`);
+function setComponentAria(element: Record<string, any>) {
+  const prevAria = element.attr('aria-label') || '';
+  element.attr('aria-label', `${prevAria} ${ariaDescription.value}`);
 }
 </script>

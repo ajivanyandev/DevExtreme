@@ -66,6 +66,7 @@ import { ref } from 'vue';
 import DxPivotGrid, {
   DxFieldChooser,
   DxFieldPanel,
+  type DxPivotGridTypes,
 } from 'devextreme-vue/pivot-grid';
 import DxCheckBox, { type DxCheckBoxTypes } from 'devextreme-vue/check-box';
 import PivotGridDataSource from 'devextreme/ui/pivot_grid/data_source';
@@ -115,24 +116,22 @@ function OnShowFilterFieldsChanged(e: DxCheckBoxTypes.ValueChangedEvent) {
 function OnShowRowFieldsChanged(e: DxCheckBoxTypes.ValueChangedEvent) {
   showRowFields.value = e.value;
 }
-function onContextMenuPreparing(e: Record<string, any>) {
+function onContextMenuPreparing(e: DxPivotGridTypes.ContextMenuPreparingEvent) {
   const dataSource = e.component.getDataSource();
-  const sourceField = e.field;
+  const sourceField: Record<string, any> | undefined = e.field;
 
   if (sourceField) {
     if (!sourceField.groupName || sourceField.groupIndex === 0) {
-      e.items.push({
+      e.items?.push({
         text: 'Hide field',
         onItemClick() {
           let fieldIndex: number;
 
-          if (sourceField.groupName) {
-            fieldIndex = dataSource
-              .getAreaFields(sourceField.area, true)[sourceField.areaIndex]
-              .index;
-          } else {
-            fieldIndex = sourceField.index;
-          }
+          const dataSourceField: Record<string, any> = sourceField.groupName 
+              ? dataSource.getAreaFields(sourceField.area, true)[sourceField.areaIndex]
+              : sourceField
+
+          fieldIndex = dataSourceField.index;
 
           dataSource.field(fieldIndex, {
             area: null,
@@ -152,7 +151,7 @@ function onContextMenuPreparing(e: Record<string, any>) {
       };
       const menuItems: Record<string, any>[] = [];
 
-      e.items.push({ text: 'Summary Type', items: menuItems });
+      e.items?.push({ text: 'Summary Type', items: menuItems });
 
       ['Sum', 'Avg', 'Min', 'Max'].forEach((summaryType) => {
         const summaryTypeValue = summaryType.toLowerCase();
@@ -161,7 +160,7 @@ function onContextMenuPreparing(e: Record<string, any>) {
           text: summaryType,
           value: summaryType.toLowerCase(),
           onItemClick: setSummaryType,
-          selected: e.field.summaryType === summaryTypeValue,
+          selected: e.field?.summaryType === summaryTypeValue,
         });
       });
     }

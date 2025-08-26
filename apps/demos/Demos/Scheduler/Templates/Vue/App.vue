@@ -53,6 +53,7 @@
 import { ref } from 'vue';
 import DxScheduler, { DxResource, type DxSchedulerTypes } from 'devextreme-vue/scheduler';
 import { type DxSelectBoxTypes } from 'devextreme-vue/select-box';
+import { type DxDateBoxTypes } from 'devextreme-vue/date-box';
 import { query as Query } from 'devextreme-vue/common/data';
 import AppointmentTemplate from './AppointmentTemplate.vue';
 import AppointmentTooltipTemplate from './AppointmentTooltipTemplate.vue';
@@ -106,8 +107,8 @@ function onAppointmentFormOpening(e: DxSchedulerTypes.AppointmentFormOpeningEven
     editorOptions: {
       width: '100%',
       type: 'datetime',
-      onValueChanged(args: any) {
-        startDate = args.value as Date;
+      onValueChanged(args: DxDateBoxTypes.ValueChangedEvent) {
+        startDate = args.value;
         form.updateData('endDate', new Date(startDate.getTime() + 60 * 1000 * movieInfo.duration));
       },
     },
@@ -132,7 +133,7 @@ function onAppointmentFormOpening(e: DxSchedulerTypes.AppointmentFormOpeningEven
   },
   ]);
 }
-const getMovieById = function(resourceId: any) {
+const getMovieById = function(resourceId: string) {
   return Query(moviesData)
     .filter(['id', resourceId])
     .toArray()[0];
