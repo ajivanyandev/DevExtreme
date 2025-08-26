@@ -45,12 +45,12 @@ import { DxSelectBox } from 'devextreme-vue/select-box';
 import { employees } from './data.ts';
 
 const items = employees;
-const selectedValue = ref(null);
+const selectedValue = ref<Record<string, any>>();
 const applyValueModes: DxLookupTypes.ApplyValueMode[] = ['instantly', 'useButtons'];
 const applyValueMode = ref(applyValueModes[0]);
 
 const getDisplayExpr = ({ FirstName = '', LastName = '' } = {}) => `${FirstName} ${LastName}`.trim();
-function setSelectedValue(e) {
+function setSelectedValue(e: DxLookupTypes.ValueChangedEvent) {
   selectedValue.value = e.value;
 }
 </script>
