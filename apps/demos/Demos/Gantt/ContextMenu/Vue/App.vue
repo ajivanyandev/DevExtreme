@@ -85,8 +85,8 @@ const contextMenuItems = [
     name: 'ToggleDisplayOfResources',
     text: 'Toggle Display of Resources',
   },
-] as DxGanttTypes.GanttPredefinedContextMenuItem[];
-const contextMenuActualItems = ref<DxGanttTypes.ContextMenuItem | undefined>(contextMenuItems);
+] as DxGanttTypes.ContextMenuItem[];
+const contextMenuActualItems = ref<DxGanttTypes.ContextMenuItem[] | undefined>(contextMenuItems);
 
 function onContextMenuPreparing(e: DxGanttTypes.ContextMenuPreparingEvent) {
   e.cancel = disableContextMenu.value;
