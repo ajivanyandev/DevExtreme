@@ -53,7 +53,7 @@ import DxChat, { type DxChatTypes } from 'devextreme-vue/chat';
 import DxButton from 'devextreme-vue/button';
 import { loadMessages } from 'devextreme-vue/common/core/localization';
 import { type Events } from 'devextreme-vue/common/core';
-import { AzureOpenAI,  } from 'openai';
+import { AzureOpenAI } from 'openai';
 import {
   dictionary,
   messages,
@@ -77,7 +77,7 @@ onBeforeMount(() => {
   loadMessages(dictionary);
 });
 
-async function getAIResponse(messages: Array<DxChatTypes.Message>): Promise<string> {
+async function getAIResponse(messages: DxChatTypes.Message[]): Promise<string> {
   const params: Record<string, any> = {
     messages: messages,
     model: AzureOpenAIConfig.deployment,
