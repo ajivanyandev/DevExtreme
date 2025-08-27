@@ -48,7 +48,7 @@ const appointmentClassName = '.dx-scheduler-appointment';
 const cellClassName = '.dx-scheduler-date-table-cell';
 const currentDate = ref(new Date(2020, 10, 25));
 const dataSource = data;
-const groups = ref<string[] | null>();
+const groups = ref<string[]>();
 const crossScrollingEnabled = ref(false);
 const disabled = ref(true);
 const contextMenuItems = ref<DxContextMenuTypes.Item[]>([]);
@@ -117,7 +117,7 @@ function onCellContextMenu({ cellData }: DxSchedulerTypes.CellContextMenuEvent) 
       onItemClick: () => {
         if (groups.value) {
           crossScrollingEnabled.value = false;
-          groups.value = null;
+          groups.value = undefined;
         } else {
           crossScrollingEnabled.value = true;
           groups.value = ['roomId'];
