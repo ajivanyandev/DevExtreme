@@ -98,7 +98,6 @@ import {
 import FileSystemItem from 'devextreme/file_management/file_system_item';
 import { fileItems, getItemInfo } from './data.ts';
 
-
 const newFileMenuOptions = getNewFileMenuOptions();
 const changeCategoryMenuOptions = getChangeCategoryMenuOptions();
 const fileManager = ref();

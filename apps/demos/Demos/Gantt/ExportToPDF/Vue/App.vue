@@ -202,7 +202,7 @@ async function exportGantt() {
       ? 'treeList'
       : exportModeBoxValue.value.toLowerCase() as GanttPdfExportMode;
   const dataRangeMode = dateRangeBoxValue.value.toLowerCase();
-  let dataRange: object | GanttPdfExportDateRange;
+  let dataRange: Record<string, any> | GanttPdfExportDateRange;
   if (dataRangeMode === 'custom') {
     dataRange = {
       startIndex: startTaskIndex.value,
