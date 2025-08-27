@@ -86,13 +86,13 @@ const contextMenuItems = [
     text: 'Toggle Display of Resources',
   },
 ] as DxGanttTypes.GanttPredefinedContextMenuItem[];
-const contextMenuActualItems = ref<DxGanttTypes.ContextMenuItem | null>(contextMenuItems);
+const contextMenuActualItems = ref<DxGanttTypes.ContextMenuItem | undefined>(contextMenuItems);
 
 function onContextMenuPreparing(e: DxGanttTypes.ContextMenuPreparingEvent) {
   e.cancel = disableContextMenu.value;
 }
 function onCustomizeContextMenu(e: DxCheckBoxTypes.ValueChangedEvent) {
-  contextMenuActualItems.value = e.value ? contextMenuItems : null;
+  contextMenuActualItems.value = e.value ? contextMenuItems : undefined;
 }
 function onPreventContextMenuShowing(e: DxCheckBoxTypes.ValueChangedEvent) {
   disableContextMenu.value = e.value;
