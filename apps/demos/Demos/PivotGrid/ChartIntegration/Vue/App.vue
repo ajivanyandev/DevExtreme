@@ -45,7 +45,7 @@ import sales from './data.ts';
 
 const grid = ref<DxPivotGrid>();
 const chart = ref<DxChart>();
-const dataSource = {
+const dataSource: Record<string, any> = {
   fields: [{
     caption: 'Region',
     width: 120,
