@@ -122,12 +122,12 @@ function uploadDataByVisualRange({ startValue, endValue }: { startValue: Date; e
         const componentStorage = dataSource.store();
 
         dataFrame
-          .map((i: any) => ({
+          .map((i: Record<string, any>) => ({
             date: new Date(i.Date),
             minTemp: i.MinTemp,
             maxTemp: i.MaxTemp,
           }))
-          .forEach((item: any) => componentStorage.insert(item));
+          .forEach((item: Record<string, any>) => componentStorage.insert(item));
 
         dataSource.reload();
 

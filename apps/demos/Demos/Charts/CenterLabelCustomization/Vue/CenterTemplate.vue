@@ -28,10 +28,8 @@
   </svg>
 </template>
 <script setup lang="ts">
-
+import { computed } from 'vue';
 import { type DxPieChart } from "devextreme-vue/pie-chart";
-import { type chartPointObject } from "devextreme/viz/chart";
-import {computed} from "vue";
 
 type DxPieChartInstance = DxPieChart['instance'];
 

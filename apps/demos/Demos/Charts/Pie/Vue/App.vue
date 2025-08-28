@@ -45,7 +45,7 @@ function legendClickHandler(e: DxPieChartTypes.LegendClickEvent) {
   toggleVisibility(item);
 }
 
-function toggleVisibility(item: any): void {
+function toggleVisibility(item: Record<string, any>): void {
   item.isVisible() ? item.hide() : item.show();
 }
 </script>
