@@ -26,7 +26,6 @@ import PivotGridDataSource from 'devextreme/ui/pivot_grid/data_source';
 import { Workbook } from 'devextreme-exceljs-fork';
 // Our demo infrastructure requires us to use 'file-saver-es'.
 // We recommend that you use the official 'file-saver' package in your applications.
-// @ts-ignore
 import { saveAs } from 'file-saver-es';
 import { exportPivotGrid, type PivotGridCell } from 'devextreme-vue/common/export/excel';
 import { sales } from './data.ts';
