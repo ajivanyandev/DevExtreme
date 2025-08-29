@@ -3,7 +3,7 @@ import type { DxChatTypes } from "devextreme-vue/chat";
 const date = new Date();
 date.setHours(0, 0, 0, 0);
 
-function getTimestamp(date: Date, offsetMinutes: number = 0): number {
+function getTimestamp(date: Date, offsetMinutes: number = 0) {
   return date.getTime() + offsetMinutes * 60000;
 }
 

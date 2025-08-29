@@ -118,7 +118,7 @@ const editingStrategy: Record<string, boolean | ((options: CustomStrategyOptions
     const userId = user?.id;
 
     const lastNotDeletedMessage = items?.findLast(
-      (item: any) => item.author?.id === userId && !item.isDeleted
+      (item: DxChatTypes.Message) => item.author?.id === userId && !item.isDeleted
     );
 
     return message.id === lastNotDeletedMessage?.id;

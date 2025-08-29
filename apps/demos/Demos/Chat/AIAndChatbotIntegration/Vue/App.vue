@@ -49,11 +49,12 @@
 
 <script setup lang="ts">
 import { ref, onBeforeMount } from 'vue';
+import { AzureOpenAI } from 'openai';
 import DxChat, { type DxChatTypes } from 'devextreme-vue/chat';
 import DxButton from 'devextreme-vue/button';
 import { loadMessages } from 'devextreme-vue/common/core/localization';
 import { type Events } from 'devextreme-vue/common/core';
-import { AzureOpenAI } from 'openai';
+
 import {
   dictionary,
   messages,
@@ -123,7 +124,7 @@ function renderAssistantMessage(text: string): void {
   dataSource.store().push([{ type: 'insert', data: message }]);
 }
 
-async function processMessageSending(message: DxChatTypes.TextMessage, event: Events.EventObject): Promise<void> {
+async function processMessageSending(message: DxChatTypes.TextMessage, event: Events.EventObject | undefined): Promise<void> {
   toggleDisabledState(true, event);
 
   messages.push({ role: 'user', content: message.text });
@@ -175,7 +176,7 @@ async function regenerate(): Promise<void> {
 function onMessageEntered({ message, event }: DxChatTypes.MessageEnteredEvent): void {
   dataSource.store().push([{ type: 'insert', data: { id: Date.now(), ...message } }]);
 
-  if (!alerts.value.length && event) {
+  if (!alerts.value.length) {
     processMessageSending(message, event);
   }
 }

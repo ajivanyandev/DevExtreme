@@ -45,7 +45,7 @@ import { DxSelectBox } from 'devextreme-vue/select-box';
 import { employees } from './data.ts';
 
 const items = employees;
-const selectedValue = ref<Record<string, any>>();
+const selectedValue = ref<typeof items[number]>();
 const applyValueModes: DxLookupTypes.ApplyValueMode[] = ['instantly', 'useButtons'];
 const applyValueMode = ref(applyValueModes[0]);
 

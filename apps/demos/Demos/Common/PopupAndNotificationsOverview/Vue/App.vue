@@ -126,7 +126,7 @@ const currencyFormatter = new Intl.NumberFormat('en-US', {
 });
 const currency = (val: number) => currencyFormatter.format(val);
 
-function showHouse(house: Record<string, any>) {
+function showHouse(house: Record<string, unknown>) {
   currentHouse.value = house;
   popupVisible.value = true;
 }
